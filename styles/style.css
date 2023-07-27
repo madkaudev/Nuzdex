@@ -1,0 +1,50 @@
+/* General styling for site. */
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation bar styling. */
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    position: fixed;
+}
+
+.background-bar {
+    width: 100px;
+    height: 100px;
+    position: 0px 0px;
+    background-color: white;
+}
+
+.nav-link {
+    text-align: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1px 10px;
+    text-decoration: none;
+}
+
+.nav-link:link, :visited {
+    color: black;
+}
+
+.nav-link:hover {
+    color: rgb(91, 110, 225);
+}
+
+.nav-link:active {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* Misc styling. */
+.divider {
+    border: 1px solid black;
+}
+
