@@ -7,21 +7,17 @@ html {
 .nav-bar {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    top: 0;
     align-items: center;
     align-content: flex-start;
     justify-content: flex-start;
     gap: 20px;
-    position: fixed;
+    background: white;
+    position: fixed;   
+    width: 100%;
 }
 
-.background-bar {
-    width: 100px;
-    height: 100px;
-    position: 0px 0px;
-    background-color: white;
-}
-
+/* Navigation link styling. */
 .nav-link {
     text-align: center;
     background-color: white;
@@ -29,6 +25,7 @@ html {
     border-radius: 10px;
     padding: 1px 10px;
     text-decoration: none;
+    margin-left: 5px;
 }
 
 .nav-link:link, :visited {
@@ -44,7 +41,17 @@ html {
 }
 
 /* Misc styling. */
-.divider {
-    border: 1px solid black;
+.top-padding {
+    height: 64px;
 }
 
+.divider {
+    height: 1px;
+    border: 1px;
+    background-color: black;
+}
+
+.text-block {
+    margin-left: 20px;
+    margin-right: 20px;
+}

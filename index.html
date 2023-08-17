@@ -24,23 +24,23 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <!-- Load styles and scripts -->
+        <link rel="stylesheet" href="styles/normalize.css" />
         <link rel="stylesheet" href="styles/style.css" />
         <script src="scripts/main.js" defer></script>
     </head>
-    <div class="nav-bar">
-        <img src="images/NuzdexLogo.png" alt="Nuzdex logo as the home icon" width="64" height="64" />
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="credits.html">Credits</a>
-        <a class="nav-link" href="credits.html">Credits</a>
-        <a class="nav-link" href="credits.html">Credits</a>
-    </div>
-    <div class="background-bar"></div>
-    <div class="divider"></div>
     <body>
-        <header>
+        <div class="nav-bar">
+            <img src="images/NuzdexLogo.png" alt="Nuzdex logo as the home icon" width="64" height="64" style="margin-left: 25px;"/>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="">Blank</a>
+            <a class="nav-link" href="credits.html">Credits</a>
+            <a class="nav-link" href="credits.html">Credits</a>
+        </div>
+        <div class="top-padding"></div>
+        <header class="text-block">
             <h1>Welcome to <abbr title="Nuzlocke Pokedex">Nuzdex</abbr>!</h1>
         </header>
-        <main>
+        <main class="text-block">
             <h2>What's a nuzlocke?</h2>
             <p>A nuzlocke is a set of rules that players of a Pokemon game can follow for a more challenging experience. 
                 Check out this video explaining all the rules of a nuzlocke.
@@ -66,13 +66,18 @@
                 <li>Friends list</li>
                 <li>And more!</li>
             </ol>
+            <h2>What generations of Pokemon do you have?</h2>
+            <p>
+                We try our best to keep up to date with new generations of Pokemon and any changes to data. It may take a little bit, but 
+                we try to at least make an effort to stay on top of changes.
+            </p>
             <h2 id="who">Who is responsible for Nuzdex? (Who can I complain to?)</h2>
             <p>You can learn all about the team behind Nuzdex in our 
                 <a href="credits.html" title="Nuzdex credits">credits section.</a>
             </p>
         </main>
         <div class="divider"></div>
-        <footer>
+        <footer class="text-block">
             <p>Made with BST by Barnyard Inc.</p>
         </footer>
     </body>
