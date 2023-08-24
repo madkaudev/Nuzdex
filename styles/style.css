@@ -1,6 +1,18 @@
 /* General styling for site. */
 html {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lato', sans-serif;
+}
+
+header, footer {
+    width: 100%;
+    background-color: rgb(91, 110, 225);
+}
+
+h2 {
+    border-style: solid;
+    border-color: black;
+    padding-bottom: 5px;
+    border-width: 0px 0px 1px 0px;
 }
 
 /* Navigation bar styling. */
@@ -12,13 +24,15 @@ html {
     align-content: flex-start;
     justify-content: flex-start;
     gap: 20px;
-    background: white;
+    background: lightgray;
     position: fixed;   
     width: 100%;
 }
 
 /* Navigation link styling. */
 .nav-link {
+    width: 80px;
+    height: 20px;
     text-align: center;
     background-color: white;
     border: 1px solid black;
@@ -40,18 +54,33 @@ html {
     background: rgba(0, 0, 0, 0.25);
 }
 
-/* Misc styling. */
+/* Site custom-elements. */
 .top-padding {
     height: 64px;
 }
 
 .divider {
-    height: 1px;
-    border: 1px;
+    height: 2px;
     background-color: black;
 }
 
-.text-block {
-    margin-left: 20px;
-    margin-right: 20px;
+/* Custom Section Styling */
+.section-block, .section-block-blue, .section-block-footer {
+    margin-left: 15%;
+    width: 65%;
+    text-align: left; 
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.section-block-blue {
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.section-block-footer {
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
