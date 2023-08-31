@@ -8,13 +8,6 @@ header, footer {
     background-color: rgb(91, 110, 225);
 }
 
-h2 {
-    border-style: solid;
-    border-color: black;
-    padding-bottom: 5px;
-    border-width: 0px 0px 1px 0px;
-}
-
 /* Navigation bar styling. */
 .nav-bar {
     display: flex;
@@ -27,6 +20,9 @@ h2 {
     background: lightgray;
     position: fixed;   
     width: 100%;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 0px 2px 0px;
 }
 
 /* Navigation link styling. */
@@ -56,7 +52,7 @@ h2 {
 
 /* Site custom-elements. */
 .top-padding {
-    height: 64px;
+    height: 66px;
 }
 
 .divider {
