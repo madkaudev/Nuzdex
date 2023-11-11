@@ -8,49 +8,6 @@ header, footer {
     background-color: rgb(91, 110, 225);
 }
 
-/* Navigation bar styling. */
-.nav-bar {
-    display: flex;
-    flex-direction: row;
-    top: 0;
-    align-items: center;
-    align-content: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-    background: lightgray;
-    position: fixed;   
-    width: 100%;
-    border-style: solid;
-    border-color: black;
-    border-width: 0px 0px 2px 0px;
-}
-
-/* Navigation link styling. */
-.nav-link {
-    width: 80px;
-    height: 20px;
-    text-align: center;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 1px 10px;
-    text-decoration: none;
-    margin-left: 5px;
-}
-
-.nav-link:link, :visited {
-    color: black;
-}
-
-.nav-link:hover {
-    color: rgb(91, 110, 225);
-}
-
-.nav-link:active {
-    background: rgba(0, 0, 0, 0.25);
-}
-
-/* Site custom-elements. */
 .top-padding {
     height: 66px;
 }
@@ -58,25 +15,4 @@ header, footer {
 .divider {
     height: 2px;
     background-color: black;
-}
-
-/* Custom Section Styling */
-.section-block, .section-block-blue, .section-block-footer {
-    margin-left: 15%;
-    width: 65%;
-    text-align: left; 
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
-
-.section-block-blue {
-    color: white;
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-
-.section-block-footer {
-    color: white;
-    padding-top: 1%;
-    padding-bottom: 1%;
 }

@@ -1,0 +1,20 @@
+/* Custom Section Styling */
+.section-block, .section-block-blue, .section-block-footer {
+    margin-left: 15%;
+    width: 65%;
+    text-align: left; 
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.section-block-blue {
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.section-block-footer {
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
