@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "structs.h": "c",
+        "ctype.h": "c",
+        "freqfunctions.h": "c"
+    }
+}

@@ -39,8 +39,3 @@
 .nav-link:active {
     background: rgba(0, 0, 0, 0.25);
 }
-
-/* Navigation bar logo styling. */
-.nav-bar > img {
-    margin-left: 50px;
-}
