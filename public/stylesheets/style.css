@@ -1,8 +1,18 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* General styling for site. */
+html {
+    font-family: 'Lato', sans-serif;
 }
 
-a {
-  color: #00B7FF;
+header, footer {
+    width: 100%;
+    background-color: rgb(91, 110, 225);
+}
+
+.top-padding {
+    height: 66px;
+}
+
+.divider {
+    height: 2px;
+    background-color: black;
 }

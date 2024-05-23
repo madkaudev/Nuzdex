@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "freqfunctions.h": "c",
-        "stdio.h": "c",
-        "structs.h": "c",
-        "printhexfunctions.h": "c",
-        "checkfunctions.h": "c"
-    }
-}

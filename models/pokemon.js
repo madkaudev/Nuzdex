@@ -5,13 +5,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const PokemonSchema = new Schema({
     gen: { type: Number, required: true },
-    number: [{ type: Number, required: true }],
     name: { type: String, required: true },
+    number: [{ type: Number, required: true }],
     type1: { type: String, required: true },
     type2: { type: String, required: true },
-    evolutions: [{ type: Map }],
     levelRate: { type: String, required: true },
-    genderRatio: { type: String },
     stats: {
         hp: { type: Number, required: true },
         atk: { type: Number, required: true },
@@ -20,6 +18,21 @@ const PokemonSchema = new Schema({
         spDef: { type: Number, required: true },
         spd: { type: Number, required: true },
     },
+    moves: [{ 
+        type: Map, 
+        of: { type: Schema.Types.ObjectId, ref: "Move" },
+        required: true,
+    }],
+    eggGroup1: { type: String, required: true },
+    eggGroup2: { type: String },
+    abilities: [{ 
+        type: Map,
+        of: { type: Schema.Types.ObjectId, ref: "Ability" },
+    }],
+    evolutions: [{ type: Map }],
+    genderRatio: { type: String },
+    baseHappiness: { type: Number },
+    heldItems: [{ type: Map }],
     evs: {
         hp: { type: Number },
         atk: { type: Number },
@@ -28,24 +41,15 @@ const PokemonSchema = new Schema({
         spDef: { type: Number },
         spd: { type: Number },
     },
-    baseHappiness: { type: Number },
-    eggGroup1: { type: String, required: true },
-    eggGroup2: { type: String },
-    heldItems: [{ type: Map }],
     canSOS: { type: Boolean },
     canDynamax: { type: Boolean },
     canTerra: { type: Boolean },
     locations: [{ type: String }],
-    moves: [{ 
-        type: Map, 
-        of: { type: Schema.Types.ObjectId, ref: "Move" },
-        required: true,
-    }],
 });
 
 // Virtual for pokemon's URL
 PokemonSchema.virtual("url").get(function (){
-    return `/home/pokemon/gen${this.gen}/${this.name}`
+    return `/home/pokemon/gen${this.gen}/${this.name}`;
 });
 
 // Export model
