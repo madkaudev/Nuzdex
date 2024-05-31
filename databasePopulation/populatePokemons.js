@@ -4,7 +4,7 @@
 const userArgs = process.argv.slice(2);
 
 // Retrieve models
-const Pokemon = require("./models/pokemon");
+const Pokemon = require("../models/pokemon");
 
 // Create array for records
 const pokemons = [];

@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import re 
+import unicodedata
 
 # Making a GET request to initial site
 request = requests.get("https://www.serebii.net/attackdex-rby/absorb.shtml")
@@ -53,6 +54,19 @@ for i in range(len(links)):
     print("Saving data for: " + move[0])
     gen1Moves.loc[i] = move
 
+# Function to normalize accented letters
+def normalize_string(string):
+    ## Decompose the Unicode string to separate base characters and their combining marks
+    normalized_str = unicodedata.normalize('NFD', string)
+    
+    ## Encode to ASCII bytes, ignoring non-ASCII characters (combining marks)
+    ascii_bytes = normalized_str.encode('ascii', 'ignore')
+    
+    ## Decode back to a string
+    ascii_str = ascii_bytes.decode('ascii')
+    
+    return ascii_str
+
 # Function to extract type from link string
 def extract_type(link):
     regex = r'/([^/]+)\.shtml$'
@@ -85,7 +99,7 @@ def convert_effect(effect):
     if not effect.strip():
         return "N/A"
     else:
-        return effect
+        return normalize_string(effect)
     
 # Function to convert power to N/A, 1HKO, or not change
 def convert_power(power):
@@ -95,8 +109,11 @@ def convert_power(power):
         return power
 
 # Function to round accuracy numbers
-def round_accuracy(accuracy):
-    return round(float(accuracy))
+def convert_accuracy(row):
+    if row["Category"] == "Status":
+        return "N/A"
+    else:
+        return round(float(row["Accuracy"]))
 
 # Function to convert CritRate to number or N/A
 def convert_crit_rate(rate):
@@ -108,19 +125,28 @@ def convert_crit_rate(rate):
         return int(rate)
 
 # Apply data cleaning functions
+gen1Moves["Name"] = gen1Moves["Name"].apply(normalize_string)
 gen1Moves["Type"] = gen1Moves["Type"].apply(extract_type)
+
 gen1Moves.insert(2, "Category", "")
 gen1Moves["Category"] = gen1Moves.apply(extract_category, axis=1)
+
+gen1Moves["Description"] = gen1Moves["Description"].apply(normalize_string)
 gen1Moves["EffectRate"] = gen1Moves["EffectRate"].apply(convert_effect_rate)
 gen1Moves["Effect"] = gen1Moves["Effect"].apply(convert_effect)
 gen1Moves["Power"] = gen1Moves["Power"].apply(convert_power)
-gen1Moves["Accuracy"] = gen1Moves["Accuracy"].apply(round_accuracy)
-gen1Moves.insert(8, "CritRate", "")
+gen1Moves["Accuracy"] = gen1Moves.apply(convert_accuracy, axis=1)
+
+gen1Moves.insert(9, "CritRate", "")
 gen1Moves["CritRate"] = gen1Moves["CritRate"].apply(convert_crit_rate)
+
+gen1Moves["Target"] = gen1Moves["Target"].apply(normalize_string)
+
+gen1Moves.insert(0, "Generation", 1)
 
 # Drop columns
 gen1Moves = gen1Moves.drop(["TM"], axis=1)
 
 # Save to CSV file
-gen1Moves.to_csv("CSVS/gen1Moves.csv", index=True, index_label="Id")
+gen1Moves.to_csv("CSVS/gen1Moves.csv", index=False, index_label=False)
     
